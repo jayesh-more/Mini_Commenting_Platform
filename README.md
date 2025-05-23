@@ -1,7 +1,5 @@
 # Mini_Commenting_Platform
 
-# Mini Commenting Platform
-
 A simple full-stack commenting platform built with **Angular** (frontend) and **FastAPI** (backend) using **MongoDB** for persistent storage.
 
 
