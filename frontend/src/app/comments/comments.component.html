@@ -1,0 +1,39 @@
+<div class="comments-outer">
+  <div class="comments-container">
+    <button class="back-btn" (click)="goToLogin()">&#8592; Back to Login</button>
+    <h2>Comments</h2>
+    <!-- Add new comment -->
+    <form class="comment-form" (ngSubmit)="addComment()" #commentForm="ngForm">
+      <textarea [(ngModel)]="newComment" name="newComment" required placeholder="Add a comment..." rows="3"></textarea>
+      <button type="submit" [disabled]="!commentForm.valid">Post Comment</button>
+    </form>
+
+    <!-- Comments list -->
+    <div *ngFor="let comment of topLevelComments" class="comment-card">
+      <div class="comment-content">
+        <span class="comment-author">{{ comment.author }}:</span>
+        {{ comment.content }}
+      </div>
+      <div class="comment-actions">
+        <button (click)="showReplyBox(comment.id)">Reply</button>
+        <button *ngIf="comment.author === currentUser" (click)="deleteComment(comment.id)" class="delete-btn">Delete</button>
+      </div>
+      <!-- Reply box -->
+      <form *ngIf="replyTo === comment.id" class="reply-form" (ngSubmit)="addReply(comment.id)" #replyForm="ngForm">
+        <textarea [(ngModel)]="replyContent" name="replyContent" required placeholder="Write a reply..." rows="2"></textarea>
+        <button type="submit" [disabled]="!replyForm.valid">Reply</button>
+        <button type="button" (click)="cancelReply()">Cancel</button>
+      </form>
+      <!-- Replies (2nd level) -->
+      <div *ngFor="let reply of getReplies(comment.id)" class="reply-card">
+        <div class="comment-content">
+          <span class="comment-author">{{ reply.author }}:</span>
+          {{ reply.content }}
+        </div>
+        <div class="comment-actions">
+          <button *ngIf="reply.author === currentUser" (click)="deleteComment(reply.id)" class="delete-btn">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
