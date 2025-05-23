@@ -2,6 +2,29 @@
 
 A simple full-stack commenting platform built with **Angular** (frontend) and **FastAPI** (backend) using **MongoDB** for persistent storage.
 
+---
+
+## 📸 Screenshots
+
+### 🧑‍💼 User Registration Page
+![Register Page](./images/register.png)
+
+### 🔐 Login Page
+![Login Page](./images/login.png)
+
+### 💬 Comment Page
+![Comment Page](./images/comment-page.png)
+
+### ➕ Add Comment & Reply Page
+![Add Comment](./images/add-comment.png)
+
+### 🗃️ MongoDB: Users Collection
+![User DB](./images/db-users.png)
+
+### 🗂️ MongoDB: Comments Collection
+![Comment DB](./images/db-comments.png)
+
+---
 
 ## Features
 
@@ -12,7 +35,6 @@ A simple full-stack commenting platform built with **Angular** (frontend) and **
 - All data stored and managed in MongoDB
 - Responsive, modern UI with clear feedback
 
-
 ## What I Learned
 
 - How to build a full-stack app using Angular and FastAPI
@@ -21,7 +43,6 @@ A simple full-stack commenting platform built with **Angular** (frontend) and **
 - Structuring RESTful API endpoints for authentication and CRUD operations
 - Handling CORS and cross-origin requests in a real-world setup
 - Managing state and navigation in Angular
-
 
 ## What Parts Were Hard
 
@@ -41,20 +62,16 @@ A simple full-stack commenting platform built with **Angular** (frontend) and **
 - Deploy the app to a cloud platform (e.g., Vercel/Netlify for frontend, Render for backend)
 - Write unit and integration tests for both frontend and backend
 
-
-
 ## How to Run
 
 1. **Backend:**  
    - Install Python dependencies: `pip install fastapi pymongo uvicorn`
-   - Start MongoDB locally or use MongoDB Atlas
+   - Start MongoDB locally or use MongoDB Atlas  
    - Run: `uvicorn app:app --reload` from the `backend/comment-api` folder
 
 2. **Frontend:**  
-   - Install Node dependencies: `npm install`
+   - Install Node dependencies: `npm install`  
    - Run: `ng serve` or `npm start` from the `commenting-platform` folder
 
 3. **Access the app:**  
    - Open [http://localhost:4200](http://localhost:4200) in your browser
-
-
